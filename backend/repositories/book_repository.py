@@ -15,7 +15,7 @@ def get_books_repo():
                     title,
                     author,
                     year_published,
-                    genere
+                    genre
                 FROM tblBooks
                 """
             ),

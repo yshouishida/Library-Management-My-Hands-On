@@ -1,5 +1,4 @@
 from flask import Flask
-from backend.database.connection import get_connection
 
 
 def create_app():
@@ -14,8 +13,8 @@ def create_app():
         app.register_blueprint(borrowers_bp)
         app.register_blueprint(transaction_bp)
 
-        get_connection()
-        print("Connected.")
+        # get_connection()
+        # print("Connected.")
 
         return app
     except Exception as e:
