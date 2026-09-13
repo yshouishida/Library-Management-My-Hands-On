@@ -9,7 +9,8 @@ DB_CONFIG = {
     "database": os.getenv("DB_NAME"),
     "port": int(os.getenv("DB_PORT", 3306)),
     "user": os.getenv("DB_USER"),
-    "password": os.getenv("DB_PASSWORD")
+    "password": os.getenv("DB_PASSWORD"),
+    "cursorclass": mysql.cursors.DictCursor
 }
 
 def get_connection():

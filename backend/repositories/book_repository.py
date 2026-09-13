@@ -1,4 +1,5 @@
 from backend.database.connection import get_connection
+from backend.utils.api_response import error
 
 
 def get_books_repo():
@@ -22,7 +23,7 @@ def get_books_repo():
         return cursor.fetchall()
     
     except Exception as e:
-        print(f"Error: {e}")
+        error("Internal error", 500, e)
     finally:
         if conn: conn.close()
 
@@ -40,12 +41,14 @@ def get_by_id_repo(id):
                     title,
                     author,
                     year_published,
-                    genere
+                    genre
                 FROM tblBooks
                 WHERE id = %s
                 """,
                 (id,)
             )
+        return cursor.fetchone()
+    
     except Exception as e:
         print(f"Error: {e}")
     finally:
