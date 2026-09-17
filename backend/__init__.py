@@ -13,9 +13,6 @@ def create_app():
         app.register_blueprint(borrowers_bp)
         app.register_blueprint(transaction_bp)
 
-        # get_connection()
-        # print("Connected.")
-
         return app
     except Exception as e:
         print(f"Error: {e}")

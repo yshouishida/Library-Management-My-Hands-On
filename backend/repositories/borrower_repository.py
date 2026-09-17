@@ -1,7 +1,7 @@
 from backend.database.connection import get_connection
 
 
-def get_borrowers():
+def get_borrowers_repo():
     conn = None
 
     try:
@@ -51,7 +51,7 @@ def get_by_id_repo(id):
         if conn: conn.close()
 
 
-def add_borrower(first_name, last_name, contact):
+def add_borrower_repo(first_name, last_name, contact):
     conn = None
 
     try:
@@ -80,7 +80,7 @@ def add_borrower(first_name, last_name, contact):
     finally:
         if conn: conn.close()
 
-def update_borrower(first_name, last_name, contact, id):
+def update_borrower_repo(first_name, last_name, contact, id):
     conn = None
 
     try:
@@ -121,7 +121,7 @@ def update_borrower(first_name, last_name, contact, id):
         if conn: conn.close()
 
 
-def delete_borrower(id):
+def delete_borrower_repo(id):
     conn = None
 
     try:
